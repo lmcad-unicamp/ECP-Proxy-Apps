@@ -1,3 +1,15 @@
 [submodule "sw4lite"]
 	path = sw4lite
 	url = https://github.com/thaisacs/sw4lite
+[submodule "thornado_mini"]
+	path = thornado_mini
+	url = https://github.com/thaisacs/thornado_mini
+[submodule "AMG"]
+	path = AMG
+	url = https://github.com/thaisacs/AMG
+[submodule "miniVite"]
+	path = miniVite
+	url = https://github.com/thaisacs/miniVite
+[submodule "SWFFT"]
+	path = SWFFT
+	url = ./SWFFT
