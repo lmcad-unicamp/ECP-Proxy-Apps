@@ -1,0 +1,3 @@
+[submodule "sw4lite"]
+	path = sw4lite
+	url = https://github.com/thaisacs/sw4lite
