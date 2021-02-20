@@ -10,6 +10,15 @@
 [submodule "miniVite"]
 	path = miniVite
 	url = https://github.com/thaisacs/miniVite
+[submodule "miniqmc"]
+	path = miniqmc
+	url = https://github.com/thaisacs/miniqmc
+[submodule "miniAMR"]
+	path = miniAMR
+	url = https://github.com/thaisacs/miniAMR
+[submodule "Nekbone"]
+	path = Nekbone
+	url = https://github.com/thaisacs/Nekbone
 [submodule "SWFFT"]
 	path = SWFFT
-	url = ./SWFFT
+	url = https://github.com/thaisacs/SWFFT
