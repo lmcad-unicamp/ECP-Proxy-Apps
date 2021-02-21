@@ -22,3 +22,6 @@
 [submodule "SWFFT"]
 	path = SWFFT
 	url = https://github.com/thaisacs/SWFFT
+[submodule "PICSAR"]
+	path = PICSAR
+	url = https://github.com/thaisacs/PICSAR
