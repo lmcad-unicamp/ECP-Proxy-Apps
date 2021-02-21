@@ -25,3 +25,15 @@
 [submodule "PICSAR"]
 	path = PICSAR
 	url = https://github.com/thaisacs/PICSAR
+[submodule "ember"]
+	path = ember
+	url = https://github.com/thaisacs/ember.git
+[submodule "MACSio"]
+	path = MACSio
+	url = https://github.com/thaisacs/MACSio
+[submodule "Laghos"]
+	path = Laghos
+	url = https://github.com/thaisacs/Laghos.git
+[submodule "ExaMiniMD"]
+	path = ExaMiniMD
+	url = https://github.com/thaisacs/ExaMiniMD.git
