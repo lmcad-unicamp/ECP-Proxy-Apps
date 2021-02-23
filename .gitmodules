@@ -31,9 +31,9 @@
 [submodule "MACSio"]
 	path = MACSio
 	url = https://github.com/thaisacs/MACSio
-[submodule "Laghos"]
-	path = Laghos
-	url = https://github.com/thaisacs/Laghos.git
 [submodule "ExaMiniMD"]
 	path = ExaMiniMD
 	url = https://github.com/thaisacs/ExaMiniMD.git
+[submodule "Laghos"]
+	path = Laghos
+	url = git@github.com:thaisacs/Laghos.git
