@@ -40,3 +40,6 @@
 [submodule "mfem"]
 	path = mfem
 	url = https://github.com/mfem/mfem.git
+[submodule "XSBench"]
+	path = XSBench
+	url = https://github.com/thaisacs/XSBench
