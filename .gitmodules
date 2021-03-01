@@ -34,9 +34,6 @@
 [submodule "ExaMiniMD"]
 	path = ExaMiniMD
 	url = https://github.com/thaisacs/ExaMiniMD.git
-[submodule "XSBench"]
-	path = XSBench
-	url = https://github.com/ANL-CESAR/XSBench
 [submodule "Laghos"]
 	path = Laghos
 	url = https://github.com/thaisacs/Laghos
