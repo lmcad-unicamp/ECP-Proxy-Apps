@@ -37,3 +37,6 @@
 [submodule "XSBench"]
 	path = XSBench
 	url = https://github.com/ANL-CESAR/XSBench
+[submodule "Laghos"]
+	path = Laghos
+	url = https://github.com/thaisacs/Laghos
