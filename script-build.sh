@@ -68,6 +68,7 @@ mkdir build
 cd build
 cmake -D CMAKE_CXX_COMPILER=mpic++ ..
 make
+cd ..
 
 # miniVite
 cd miniVite
