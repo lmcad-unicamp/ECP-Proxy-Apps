@@ -40,6 +40,3 @@
 [submodule "XSBench"]
 	path = XSBench
 	url = https://github.com/thaisacs/XSBench
-[submodule "thornado_mini"]
-	path = thornado_mini
-	url = https://github.com/thaisacs/thornado_mini
