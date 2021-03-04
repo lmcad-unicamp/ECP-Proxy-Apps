@@ -30,10 +30,10 @@ make
 cd ..
 
 # THORNADO-MINI
-#cd thornado_mini/DeleptonizationProblem/Executables
-#make
-#mkdir ../Output
-#cd ../../..
+cd thornado_mini/DeleptonizationProblem/Executables
+make
+mkdir ../Output
+cd ../../..
 
 # XSBench
 cd XSBench/openmp-threading
