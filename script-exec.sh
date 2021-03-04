@@ -2,40 +2,40 @@
 
 mkdir exp-results
 
-## Laghos
-#cd Laghos
-#/usr/bin/time -v ./laghos -p 3 -m data/rectangle01_quad.mesh -rs 2 -tf 5.0 -pa &> ../exp-results/laghos.out
-#cd ..
-#
-## AMG
-#cd AMG
-#/usr/bin/time -v ./test/amg -problem 2 &> ../exp-results/amg.out
-#cd ..
-#
-## XSBench
-#cd XSBench/openmp-threading
-#/usr/bin/time -v ./XSBench -G nuclide -s large &> ../../exp-results/xsbench.out
-#cd ../..
-#
-## THORNADO-MINI
+# Laghos
+cd Laghos
+/usr/bin/time -v ./laghos -p 3 -m data/rectangle01_quad.mesh -rs 2 -tf 5.0 -pa &> ../exp-results/laghos.out
+cd ..
+
+# AMG
+cd AMG
+/usr/bin/time -v ./test/amg -problem 2 &> ../exp-results/amg.out
+cd ..
+
+# XSBench
+cd XSBench/openmp-threading
+/usr/bin/time -v ./XSBench -G nuclide -s large &> ../../exp-results/xsbench.out
+cd ../..
+
+# THORNADO-MINI
 #cd thornado_mini/DeleptonizationProblem/Executables
 #/usr/bin/time -v ./DeleptonizationProblem1D_mymachine -nX_Option=100 ../../../exp-results/thornado.out
 #cd ../../..
-#
-## Halo3D
-#cd ember/mpi/halo3d
-#/usr/bin/time -v ./halo3d -nx 100 -ny 100 -nz 100 -iterations 10000000 &> ../../../exp-results/halo3d.out
-#cd ../../..
-#
-## ExaMiniMD
-#cd ExaMiniMD
-#/usr/bin/time -v ./src/ExaMiniMD -il input/in.lj &> ../exp-results/examinimd.out
-#cd ..
-#
-## MACSio
-#cd MACSio/build
-#/usr/bin/time -v ./macsio/macsio --num_dumps 3000 &> ../../exp-results/macsio.out
-#cd ../..
+
+# Halo3D
+cd ember/mpi/halo3d
+/usr/bin/time -v ./halo3d -nx 100 -ny 100 -nz 100 -iterations 10000000 &> ../../../exp-results/halo3d.out
+cd ../../..
+
+# ExaMiniMD
+cd ExaMiniMD
+/usr/bin/time -v ./src/ExaMiniMD -il input/in.lj &> ../exp-results/examinimd.out
+cd ..
+
+# MACSio
+cd MACSio/build
+/usr/bin/time -v ./macsio/macsio --num_dumps 3000 &> ../../exp-results/macsio.out
+cd ../..
 
 # miniAMR
 cd miniAMR/openmp

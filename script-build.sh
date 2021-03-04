@@ -47,6 +47,7 @@ cd ../../..
 
 # ExaMiniMD
 cd ExaMiniMD
+make
 cd ..
 
 # MACSio
