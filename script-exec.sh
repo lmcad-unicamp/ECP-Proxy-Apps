@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export THORNADO_DIR=$1
+export THORNADO_MACHINE=mymachine
+
 mkdir exp-results
 
 # Laghos
@@ -18,9 +21,9 @@ cd XSBench/openmp-threading
 cd ../..
 
 # THORNADO-MINI
-#cd thornado_mini/DeleptonizationProblem/Executables
-#/usr/bin/time -v ./DeleptonizationProblem1D_mymachine -nX_Option=100 ../../../exp-results/thornado.out
-#cd ../../..
+cd thornado_mini/DeleptonizationProblem/Executables
+/usr/bin/time -v ./DeleptonizationProblem1D_mymachine -nX_Option=100 &> ../../../exp-results/thornado.out
+cd ../../..
 
 # Halo3D
 cd ember/mpi/halo3d

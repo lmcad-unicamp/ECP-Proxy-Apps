@@ -32,6 +32,12 @@ cd ..
 # THORNADO-MINI
 cd thornado_mini/DeleptonizationProblem/Executables
 make
+
+wget https://code.ornl.gov/m2o/thornado-tables/-/blob/master/mini-app/wl-EOS-SFHo-15-25-50-noBCK.h5
+mv wl-EOS-SFHo-15-25-50-noBCK.h5 EquationOfStateTable.h5
+wget https://code.ornl.gov/m2o/thornado-tables/-/blob/master/mini-app/wl-Op-SFHo-15-25-50-noBCK.h5
+mv wl-Op-SFHo-15-25-50-noBCK.h5 OpacityTable.h5
+
 mkdir ../Output
 cd ../../..
 
@@ -67,9 +73,9 @@ cd ../..
 cd miniqmc
 mkdir build
 cd build
-cmake -D CMAKE_CXX_COMPILER=mpic++ ..
+cmake -D CMAKE_CXX_COMPILER=mpic++ .. -D ENABLE_OPENMP=OFF ..
 make
-cd ..
+cd ../..
 
 # miniVite
 cd miniVite
