@@ -43,6 +43,3 @@
 [submodule "thornado_mini"]
 	path = thornado_mini
 	url = https://github.com/thaisacs/thornado_mini
-[submodule "thornado-tables"]
-	path = thornado-tables
-	url = git@code.ornl.gov:m2o/thornado-tables.git
