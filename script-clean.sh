@@ -3,6 +3,11 @@
 export THORNADO_DIR=$1
 export THORNADO_MACHINE=mymachine
 
+# Kokkos
+cd kokkos
+git clean -f -d
+cd ..
+
 # Laghos-hypre
 cd hypre
 git clean -f -d
