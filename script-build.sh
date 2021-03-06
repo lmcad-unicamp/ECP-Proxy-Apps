@@ -47,8 +47,7 @@ cp $PATH_DIR/thornado-tables/EquationOfStateTable.h5 $THORNADO_EXE_DIR
 cp $PATH_DIR/thornado-tables/OpacityTable.h5 $THORNADO_EXE_DIR
 cd $THORNADO_EXE_DIR
 make
-
-mkdir ../Output
+mkdir $THORNADO_DIR/DeleptonizationProblem/Output
 cd $PATH_DIR
 
 # XSBench
