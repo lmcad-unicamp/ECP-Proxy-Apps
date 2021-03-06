@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export THORNADO_DIR=$1
+export THORNADO_DIR=$PWD/thornado_mini
 export THORNADO_MACHINE=mymachine
-num_n=$2
+num_n=$1
 
 PATH_DIR=$PWD
 PATH_RES=$PATH_DIR/exp-results

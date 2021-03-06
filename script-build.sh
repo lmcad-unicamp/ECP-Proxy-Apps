@@ -2,7 +2,7 @@
 
 PATH_DIR=$PWD
 
-export THORNADO_DIR=$1
+export THORNADO_DIR=$PATH_DIR/thornado_mini
 export THORNADO_MACHINE=mymachine
 
 # Laghos-hypre
@@ -33,8 +33,8 @@ cd $PATH_DIR
 
 # THORNADO-MINI
 THORNADO_EXE_DIR=$THORNADO_DIR/DeleptonizationProblem/Executables
-cp /home/thais/Dev/master/experiments-master/PI-Bench/ECP-Proxy-Apps/thornado-tables/EquationOfStateTable.h5 $THORNADO_EXE_DIR
-/home/thais/Dev/master/experiments-master/PI-Bench/ECP-Proxy-Apps/thornado-tables/OpacityTable.h5 $THORNADO_EXE_DIR
+cp $PATH_DIR/thornado-tables/EquationOfStateTable.h5 $THORNADO_EXE_DIR
+cp $PATH_DIR/thornado-tables/OpacityTable.h5 $THORNADO_EXE_DIR
 cd $THORNADO_EXE_DIR
 make
 
