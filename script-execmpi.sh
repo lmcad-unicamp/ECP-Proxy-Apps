@@ -9,8 +9,8 @@ num_n=$1
 PATH_DIR=$PWD
 PATH_RES=$PATH_DIR/exp-results
 
-rm -rf $CURRENT_PATH
-mkdir $CURRENT_PATH
+rm -rf $PATH_RES
+mkdir $PATH_RES
 
 laghos_app="./laghos -p 3 -m data/rectangle01_quad.mesh -rs 2 -tf 5.0 -pa"
 amg_app="./test/amg -problem 2"
@@ -38,66 +38,66 @@ for ((i=0; i<10; i++)); do
 
   # AMG
   cd AMG
-  /usr/bin/time -o $CURRENT_PATH/amg.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $amg_app &> $PATH_RES/amg.out
+  /usr/bin/time -o $CURRENT_PATH/amg.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $amg_app &> $CURRENT_PATH/amg.out
   cd $PATH_DIR
 
   # XSBench
   cd XSBench/openmp-threading
-  /usr/bin/time -o $CURRENT_PATH/xsbench.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $xsbench_app &> $PATH_RES/xsbench.out
+  /usr/bin/time -o $CURRENT_PATH/xsbench.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $xsbench_app &> $CURRENT_PATH/xsbench.out
   cd $PATH_DIR
 
   # THORNADO-MINI
   cd thornado_mini/DeleptonizationProblem/Executables
-  /usr/bin/time -o $CURRENT_PATH/thornado_mini.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $thornado_mini_app &> $PATH_RES/thornado_mini.out
+  /usr/bin/time -o $CURRENT_PATH/thornado_mini.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $thornado_mini_app &> $CURRENT_PATH/thornado_mini.out
   cd $PATH_DIR
 
   # Halo3D
   cd ember/mpi/halo3d
-  /usr/bin/time -o $CURRENT_PATH/halo3d.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $halo3d_app &> $PATH_RES/halo3d.out
+  /usr/bin/time -o $CURRENT_PATH/halo3d.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $halo3d_app &> $CURRENT_PATH/halo3d.out
   cd $PATH_DIR
 
   # ExaMiniMD
   cd ExaMiniMD
-  /usr/bin/time -o $CURRENT_PATH/examinimd.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $examinimd_app &> $PATH_RES/examinimd.out
+  /usr/bin/time -o $CURRENT_PATH/examinimd.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $examinimd_app &> $CURRENT_PATH/examinimd.out
   cd $PATH_DIR
 
   # MACSio
   cd MACSio/build
-  /usr/bin/time -o $CURRENT_PATH/macsio.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $macsio_app &> $PATH_RES/macsio.out
+  /usr/bin/time -o $CURRENT_PATH/macsio.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $macsio_app &> $CURRENT_PATH/macsio.out
   cd $PATH_DIR
 
   # miniAMR
   cd miniAMR/openmp
-  /usr/bin/time -o $CURRENT_PATH/miniamr.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $miniamr_app &> $PATH_RES/miniamr.out
+  /usr/bin/time -o $CURRENT_PATH/miniamr.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $miniamr_app &> $CURRENT_PATH/miniamr.out
   cd $PATH_DIR
 
   # miniqmc
   cd miniqmc/build
-  /usr/bin/time -o $CURRENT_PATH/miniqmc.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $miniqmc_app &> $PATH_RES/miniqmc.out
+  /usr/bin/time -o $CURRENT_PATH/miniqmc.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $miniqmc_app &> $CURRENT_PATH/miniqmc.out
   cd $PATH_DIR
   #
   # miniVite
   cd miniVite
-  /usr/bin/time -o $CURRENT_PATH/minivite.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $minivite_app &> $PATH_RES/minivite.out
+  /usr/bin/time -o $CURRENT_PATH/minivite.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $minivite_app &> $CURRENT_PATH/minivite.out
   cd $PATH_DIR
 
   # Nekbone
   cd Nekbone/test/example1/
-  /usr/bin/time -o $CURRENT_PATH/nekbone.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $nekbone_app &> $PATH_RES/nekbone.out
+  /usr/bin/time -o $CURRENT_PATH/nekbone.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $nekbone_app &> $CURRENT_PATH/nekbone.out
   cd $PATH_DIR
 
   # sw4lite
   cd sw4lite
-  /usr/bin/time -o $CURRENT_PATH/sw4lite.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $sw4lite_app &> $PATH_RES/sw4lite.out
+  /usr/bin/time -o $CURRENT_PATH/sw4lite.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $sw4lite_app &> $CURRENT_PATH/sw4lite.out
   cd $PATH_DIR
 
   # SWFFT
   cd SWFFT
-  /usr/bin/time -o $CURRENT_PATH/swfft.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $swfft_app &> $PATH_RES/swfft.out
+  /usr/bin/time -o $CURRENT_PATH/swfft.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $swfft_app &> $CURRENT_PATH/swfft.out
   cd $PATH_DIR
 
   # PICSAR
   cd PICSAR
-  /usr/bin/time -o $CURRENT_PATH/picsar.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $picsar_app &> $PATH_RES/picsar.out
+  /usr/bin/time -o $CURRENT_PATH/picsar.time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n -v $picsar_app &> $CURRENT_PATH/picsar.out
   cd $PATH_DIR
 done
