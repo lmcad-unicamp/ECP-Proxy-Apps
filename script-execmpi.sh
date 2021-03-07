@@ -27,7 +27,7 @@ sw4lite_app="./optimize/sw4lite tests/cartesian/basic.in"
 swfft_app="./build/TestDfft 1000 128"
 picsar_app="./fortran_bin/picsar examples/example_decks_fortran/test.pixr"
 
-for ((i=0; i<6; i++)); do
+for ((i=0; i<10; i++)); do
   CURRENT_PATH=$PATH_RES/$(date +"%m-%d-%y-%T")
   mkdir $CURRENT_PATH
 
