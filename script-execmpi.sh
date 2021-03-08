@@ -25,7 +25,7 @@ minivite_app="./miniVite -n 100"
 nekbone_app="./nekbone"
 sw4lite_app="./optimize/sw4lite tests/cartesian/basic.in"
 swfft_app="./build/TestDfft 1000 128"
-picsar_app="./fortran_bin/picsar examples/example_decks_fortran/test.pixr"
+picsar_app="./fortran_bin/picsar examples/example_decks_fortran/laser.pixr"
 
 CURRENT_PATH=$PATH_RES/$(date +"%m-%d-%y-%T")
 mkdir $CURRENT_PATH
