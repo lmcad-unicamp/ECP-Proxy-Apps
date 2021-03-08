@@ -1,0 +1,47 @@
+--------------------------------------------------------------------------
+[[12103,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ip-172-31-6-64
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+Average time to generate 200 random numbers using LCG (in s): 4.587e-06
+
+-------------------------------------------------------
+Graph edge distribution characteristics
+-------------------------------------------------------
+Number of vertices: 100
+Number of edges: 446
+Maximum number of edges: 446
+Average number of edges: 446
+Expected value of X^2: 198916
+Variance: 0
+Standard deviation: 0
+-------------------------------------------------------
+Time to generate distributed graph of 100 vertices (in s): 0.000181934
+[PI-INFO] Init time,0,0.111501
+[PI-INFO] Paramount Iteration,0,1,0.111615,0.000114
+[PI-INFO] Paramount Iteration,0,2,0.111689,0.000074
+[PI-INFO] Paramount Iteration,0,3,0.111752,0.000063
+[PI-INFO] Paramount Iteration,0,4,0.111809,0.000057
+[PI-INFO] Paramount Iteration,0,5,0.111863,0.000054
+[PI-INFO] Paramount Iteration,0,6,0.111918,0.000055
+[PI-INFO] Paramount Iteration,0,7,0.111969,0.000051
+[PI-INFO] Paramount Iteration,0,8,0.112021,0.000052
+[PI-INFO] Paramount Iteration,0,9,0.112072,0.000051
+-------------------------------------------------------
+64-bit datatype
+-------------------------------------------------------
+Average total time (in s), #Processes: 0.000695775, 1
+Modularity, #Iterations: 0.716684, 10
+MODS (final modularity * average time): 0.000498651
+-------------------------------------------------------
+[PI-INFO] PI avg,0,0.000057,10
+[PI-INFO] Beta,0,0.283507
+[PI-INFO] Total time,0.112234

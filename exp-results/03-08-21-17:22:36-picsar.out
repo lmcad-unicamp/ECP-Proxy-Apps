@@ -1,0 +1,156 @@
+--------------------------------------------------------------------------
+[[16144,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ip-172-31-6-64
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+ _________________________________________________________________
+ 
+  PICSAR
+ _________________________________________________________________
+ Cartesian topology
+ Processor subdivision is                     1                    1                    1
+
+ 
+ SIMULATION PARAMETERS:
+ Dimension:                    3
+ dx, dy, dz:   2.0202020202020202E-007   2.0202020202020202E-007   2.0202020202020202E-007
+ dt:   2.7234004870354126E-016 s  0.27234004516069787      fs
+ Coefficient on dt determined via the CFL (dtcoef):      0.70000
+ Total time:   15.286941766601061      plasma periods:   8.1702014611062384E-014 s
+ Number of steps:                  300
+ Tiles:                    1                    1                    1
+ MPI com current:                    0
+ Current deposition method:                    0
+ Charge deposition algo:                    0
+ Field gathering method:                    0
+ Field gathering plus particle pusher seperated:                    0
+ Current/field gathering order:                    2                    2                    2
+ Particle communication: (partcom=1)
+ Pusher: Boris algorithm (particle_pusher=0)
+ Maxwell derivative coeff:   1.0000000000000000     
+ MPI buffer size:                 2000
+ 
+ Vector length current deposition                    8
+ Vector length charge deposition                   64
+ Vector length field gathering                  256
+ 
+ PLASMA PROPERTIES:
+ Distribution:                    1
+ Density in the lab frame:   1.1000000000000000E+025 m^-3
+ Density in the simulation frame:   1.1000000000000000E+025 m^-3
+ Cold plasma frequency in the lab frame:   187106056556544.47      s^-1
+ cold plasma wavelength:   1.0067293394853861E-005 m   10.067293394853861      um
+ 
+ MPI domain decomposition
+ Topology:                    0
+ Local number of cells:   99    99    99
+ Local number of grid point:  100   100   100
+ Guard cells:    4     4     4
+ 
+ Periodic field bcs X axis
+ Periodic field bcs Y axis
+ Periodic field bcs Z axis
+ FDTD_SOLVER 
+ Particle sorting activated
+ dx:   1.0101010101010101E-007
+ dy:   1.0101010101010101E-007
+ dz:   1.0101010101010101E-007
+ shiftx:  -1.0101010101010101E-007
+ shifty:  -1.0101010101010101E-007
+ shiftz:  -1.0101010101010101E-007
+ 
+ Number of species:                    2
+ laser_antenna
+ Charge:   1.0000000000000000     
+ Drift velocity:   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ Sorting period:                    0
+ Sorting start:                    0
+ 
+ laser_antenna
+ Charge:  -1.0000000000000000     
+ Drift velocity:   0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ Sorting period:                    0
+ Sorting start:                    0
+ 
+ Output of time statistics non-activated
+ Computation of the time statistics starts at iteration:    0
+
+ No particle dump ( 0)
+
+ Set tile split: done
+ Initialization of the tile arrays: done
+ number of cells per laser wavelength   2.8578838324886471     
+ Laser Waist   3.0000000000000001E-006 m
+ Laser duration   1.6678204759907605E-014  (in s)
+ Laser duration   61.240367839042456       (in dt)
+ Laser peak    0.0000000000000000      dt
+ Laser longitudinal length   5.0000000000000004E-006 m
+ Laser temporal frequency w_laser   1883651567308853.5      s^-1
+ Laser temporal period   3.3356409519815201E-015 s
+ Laser temporal period   12.248073567808488      dt
+ Laser tau / laser period    5.0000000000000009     
+ number of cells per laser wavelength   2.8578838324886471     
+ LASER EMAX   3210701160308.8057        3210701160308.8057        0.0000000000000000     
+ Creation of the particles: done
+ Total memory (GB) for grid arrays   0.14108774399999999     
+ Total memory (GB) for grid tile arrays    3.0233088000000002E-002
+ Total memory (GB) for particle tile arrays   0.24839654400000000     
+ Total memory (GB)  0.41971737599999998     
+ Avg memory (GB) /MPI process   0.41971737599999998     
+
+  Initilization of the diags
+rm: cannot remove 'RESULTS/*': No such file or directory
+ Initialization of the temporal diagnostics
+ Creation of the file                 ./RESULTS/kinE
+ Creation of the file                  ./RESULTS/exE
+ Creation of the file                  ./RESULTS/eyE
+ Creation of the file                  ./RESULTS/ezE
+ Creation of the file                  ./RESULTS/bxE
+ Creation of the file                  ./RESULTS/byE
+ Creation of the file                  ./RESULTS/bzE
+ Creation of the file             ./RESULTS/divE-rho
+ Creation of the file                  ./RESULTS/rho
+ Creation of the file                 ./RESULTS/divE
+
+ nsteps =                   300
+[PI-INFO] Init time,0,0.320667
+ Write electric field ex
+*** stack smashing detected ***: <unknown> terminated
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x7fa621e8e32a
+#1  0x7fa621e8d503
+#2  0x7fa6214f403f
+#3  0x7fa6214f3fb7
+#4  0x7fa6214f5920
+#5  0x7fa62153e966
+#6  0x7fa6215e9b60
+#7  0x7fa6215e9b21
+#8  0x7fa60e80ac00
+#9  0x7fa60e80b077
+#10  0x7fa60e80b0e1
+#11  0x7fa6222f2ba9
+#12  0x7fa62228f19f
+#13  0x7fa6222d78e6
+#14  0x7fa62258fbf8
+#15  0x5621f50cac73
+#16  0x5621f50cd6fa
+#17  0x5621f508c27e
+#18  0x5621f5084074
+#19  0x5621f5083eee
+#20  0x7fa6214d6bf6
+#21  0x5621f5083f29
+#22  0xffffffffffffffff
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 0 on node ip-172-31-6-64 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

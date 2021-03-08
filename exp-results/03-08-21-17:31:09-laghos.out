@@ -1,0 +1,108 @@
+--------------------------------------------------------------------------
+[[12020,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: ip-172-31-6-64
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+
+       __                __                 
+      / /   ____  ____  / /_  ____  _____   
+     / /   / __ `/ __ `/ __ \/ __ \/ ___/ 
+    / /___/ /_/ / /_/ / / / / /_/ (__  )    
+   /_____/\__,_/\__, /_/ /_/\____/____/  
+               /____/                       
+
+Options used:
+   --dimension 3
+   --mesh data/rectangle01_quad.mesh
+   --refine-serial 2
+   --refine-parallel 0
+   --cartesian-partitioning ''
+   --problem 3
+   --order-kinematic 2
+   --order-thermo 1
+   --order-intrule -1
+   --ode-solver 4
+   --t-final 5
+   --cfl 0.5
+   --cg-tol 1e-08
+   --ftz-tol 0
+   --cg-max-steps 300
+   --max-steps -1
+   --partial-assembly
+   --no-impose-viscosity
+   --no-visualization
+   --visualization-steps 5
+   --no-visit
+   --no-print
+   --outputfilename results/Laghos
+   --partition 0
+   --device cpu
+   --no-checks
+   --no-mem
+   --no-fom
+   --no-gpu-aware-mpi
+   --dev 0
+Device configuration: cpu
+Memory configuration: host-std
+Number of zones in the serial mesh: 336
+Zones min/max: 336 336
+Number of kinematic (position, velocity) dofs: 2850
+Number of specific internal energy dofs: 1344
+[PI-INFO] Init time,0,0.006249
+Repeating step 1
+[PI-INFO] Paramount Iteration,0,1,0.019746,0.013498
+Repeating step 1
+[PI-INFO] Paramount Iteration,0,2,0.033618,0.013872
+Repeating step 1
+[PI-INFO] Paramount Iteration,0,3,0.047623,0.014005
+Repeating step 1
+[PI-INFO] Paramount Iteration,0,4,0.061554,0.013931
+[PI-INFO] Paramount Iteration,0,5,0.075448,0.013894
+Repeating step 2
+[PI-INFO] Paramount Iteration,0,6,0.088957,0.013509
+[PI-INFO] Paramount Iteration,0,7,0.103476,0.014519
+Repeating step 3
+[PI-INFO] Paramount Iteration,0,8,0.117132,0.013656
+[PI-INFO] Paramount Iteration,0,9,0.131491,0.014359
+[PI-INFO] Paramount Iteration,0,10,0.145075,0.013584
+step     5,	t = 0.0476,	dt = 0.008554,	|e| = 4.7764852179e+01
+[PI-INFO] Paramount Iteration,0,11,0.158655,0.013580
+Repeating step 6
+[PI-INFO] Paramount Iteration,0,12,0.172102,0.013447
+[PI-INFO] Paramount Iteration,0,13,0.186450,0.014348
+[PI-INFO] Paramount Iteration,0,14,0.199951,0.013501
+[PI-INFO] Paramount Iteration,0,15,0.213408,0.013457
+[PI-INFO] PI avg,0,0.013811,15
+[PI-INFO] Beta,0,0.000092
+[PI-INFO] Total time,0.213426
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 0 with PID 0 on
+node ip-172-31-6-64 exiting improperly. There are three reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
+orte_create_session_dirs is set to false. In this case, the run-time cannot
+detect that the abort call was an abnormal termination. Hence, the only
+error message you will receive is this one.
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+
+You can avoid this message by specifying -quiet on the mpirun command line.
+--------------------------------------------------------------------------
