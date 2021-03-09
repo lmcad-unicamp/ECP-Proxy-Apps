@@ -74,6 +74,7 @@ cd $PATH_DIR
 
 # sw4lite
 cd sw4lite
+mkdir basic-results
 make
 cd $PATH_DIR
 
