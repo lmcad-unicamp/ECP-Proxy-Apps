@@ -1,12 +1,13 @@
 #!/bin/bash
 
-export THORNADO_DIR=$PWD/thornado_mini
+PATH_DIR=$PWD
+
+export THORNADO_DIR=$PATH_DIR/thornado_mini
 export THORNADO_MACHINE=mymachine
 export SOURCE_ROOT=$PATH_DIR/Nekbone/src
 
 num_n=$1
 
-PATH_DIR=$PWD
 PATH_RES=$PATH_DIR/exp-results
 
 mkdir $PATH_RES
