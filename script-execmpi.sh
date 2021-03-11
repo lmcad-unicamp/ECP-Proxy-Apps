@@ -108,9 +108,5 @@ cd $PATH_DIR
 # PICSAR
 cd PICSAR
 /usr/bin/time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n $picsar_app &> $PATH_RES/$NAME-picsar.out
-cd $PATH_DIR
-
-# PICSAR
-cd PICSAR 2
 /usr/bin/time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n $picsar2_app &> $PATH_RES/$NAME-picsar2.out
 cd $PATH_DIR
