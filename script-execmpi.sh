@@ -36,6 +36,7 @@ nekbone_app="./nekbone"
 sw4lite_app="./optimize/sw4lite tests/cartesian/basic.in"
 swfft_app="./build/TestDfft 1000 128"
 picsar_app="./fortran_bin/picsar examples/example_decks_fortran/laser-$num_n.pixr"
+picsar2_app="./fortran_bin/picsar examples/example_decks_fortran/plane_wave_test_2d-$num_n.pixr"
 
 NAME=$(date +"%m-%d-%y-%T")
 
@@ -107,4 +108,9 @@ cd $PATH_DIR
 # PICSAR
 cd PICSAR
 /usr/bin/time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n $picsar_app &> $PATH_RES/$NAME-picsar.out
+cd $PATH_DIR
+
+# PICSAR
+cd PICSAR 2
+/usr/bin/time -v mpirun --hostfile $PATH_DIR/hostfile -n $num_n $picsar2_app &> $PATH_RES/$NAME-picsar2.out
 cd $PATH_DIR
