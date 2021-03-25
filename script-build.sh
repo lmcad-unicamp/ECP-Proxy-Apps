@@ -13,20 +13,24 @@ mkdir build
 cd build
 cmake ..
 make
+
 cd $PATH_DIR
 
 # Laghos-hypre
 cd hypre/src
 ./configure --disable-fortran
 make -j2
+
 cd $PATH_DIR
 
 # Laghos-metis
 cd metis-4.0.3
 make -j2
+
 cd $PATH_DIR
 
 # Laghos-mfem
 cd mfem
 make parallel -j2
+
 cd $PATH_DIR
