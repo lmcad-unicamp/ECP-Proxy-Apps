@@ -1,6 +1,8 @@
 #!/bin/bash
 
-export THORNADO_DIR=$1
+cd ..
+
+export THORNADO_DIR=$PATH_DIR/thornado_mini
 export THORNADO_MACHINE=mymachine
 
 # Kokkos

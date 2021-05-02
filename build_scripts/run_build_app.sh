@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ..
+
 PATH_DIR=$PWD
 
 export THORNADO_DIR=$PATH_DIR/thornado_mini
