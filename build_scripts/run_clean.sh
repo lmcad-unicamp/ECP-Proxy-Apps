@@ -10,6 +10,7 @@ cd kokkos
 git clean -f -d
 cd ..
 
+rm hypre/src/config.log
 # Laghos-hypre
 cd hypre
 git clean -f -d
