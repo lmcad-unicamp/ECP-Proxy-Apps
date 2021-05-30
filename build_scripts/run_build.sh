@@ -21,18 +21,18 @@ cd $PATH_DIR
 # Laghos-hypre
 cd hypre/src
 ./configure --disable-fortran
-make -j
+make
 
 cd $PATH_DIR
 
 # Laghos-metis
 cd metis-4.0.3
-make -j
+make
 
 cd $PATH_DIR
 
 # Laghos-mfem
 cd mfem
-make parallel -j
+make parallel
 
 cd $PATH_DIR

@@ -11,13 +11,13 @@ export THORNADO_MACHINE=mymachine
 
 # Laghos
 cd Laghos
-make -j
+make
 
 cd $PATH_DIR
 
 # AMG
 cd AMG
-make -j
+make
 
 cd $PATH_DIR
 
@@ -27,26 +27,26 @@ THORNADO_EXE_DIR=$THORNADO_DIR/DeleptonizationProblem/Executables
 cd $THORNADO_EXE_DIR
 ./download-thornado-table.sh
 unzip thornado-table.zip
-make -j
+make
 mkdir $THORNADO_DIR/DeleptonizationProblem/Output
 
 cd $PATH_DIR
 
 # XSBench
 cd XSBench/openmp-threading
-make -j
+make
 
 cd $PATH_DIR
 
 # Ember
 cd ember/mpi/halo3d
-make -j
+make
 
 cd $PATH_DIR
 
 # ExaMiniMD
 cd ExaMiniMD
-make -j
+make
 
 cd $PATH_DIR
 
@@ -55,13 +55,13 @@ cd MACSio
 mkdir build
 cd build
 cmake ..
-make -j
+make
 
 cd $PATH_DIR
 
 # miniAMR
 cd miniAMR/openmp
-make -j
+make
 
 cd $PATH_DIR
 
@@ -70,13 +70,13 @@ cd miniqmc
 mkdir build
 cd build
 cmake -D CMAKE_CXX_COMPILER=mpic++ .. -D ENABLE_OPENMP=OFF ..
-make -j
+make
 
 cd $PATH_DIR
 
 # miniVite
 cd miniVite
-make -j
+make
 
 cd $PATH_DIR
 
@@ -89,18 +89,18 @@ cd $PATH_DIR
 # sw4lite
 cd sw4lite
 mkdir basic-results
-make -j
+make
 
 cd $PATH_DIR
 
 # SWFFT
 cd SWFFT
-make -j
+make
 
 cd $PATH_DIR
 
 # PICSAR
 cd PICSAR
-make -j
+make
 
 cd $PATH_DIR
