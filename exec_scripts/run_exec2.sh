@@ -9,16 +9,16 @@ mkdir $DATASET
 laghos_a_app="laghos -p 3 -m data/cube_311_hex.mesh -rs 2 -tf 5.0 -pa"
 laghos_b_app="laghos -p 3 -m data/cube_522_hex.mesh -rs 2 -tf 5.0 -pa"
 laghos_c_app="laghos -p 3 -m data/cube_922_hex.mesh -rs 2 -tf 5.0 -pa"
-amg_a_app="test/amg -problem 2 -n 35 35 35"
-amg_b_app="test/amg -problem 2 -n 50 50 50"
-amg_c_app="test/amg -problem 2 -n 80 80 80"
+amg_a_app="test/amg -problem 2 -n 2 2 2"
+amg_b_app="test/amg -problem 2 -n 3 3 3"
+amg_c_app="test/amg -problem 2 -n 5 5 5"
 xsbench_a_app="XSBench -G nuclide -s large"
 xsbench_b_app="XSBench -G nuclide -s xl"
-xsbench_c_app="XSBench -G nuclide -s xll"
+xsbench_c_app="XSBench -G nuclide -s xxl"
 thornado_mini_a_app="DeleptonizationProblem1D_mymachine"
-ember_a_app="halo3d -nx 100 -ny 100 -nz 100 -iterations 1000000"
-ember_b_app="halo3d -nx 1000 -ny 1000 -nz 1000 -iterations 1000000"
-ember_c_app="halo3d -nx 10000 -ny 10000 -nz 10000 -iterations 1000000"
+ember_a_app="halo3d -nx 1000 -ny 1000 -nz 1000 -iterations 100000"
+ember_b_app="halo3d -nx 5000 -ny 5000 -nz 5000 -iterations 5000"
+ember_c_app="halo3d -nx 10000 -ny 10000 -nz 10000 -iterations 2500"
 examinimd_a_app="src/ExaMiniMD -il input/in-C.lj"
 examinimd_b_app="src/ExaMiniMD -il input/in-D.lj"
 examinimd_c_app="src/ExaMiniMD -il input/in-E.lj"
@@ -28,7 +28,7 @@ macsio_c_app="macsio/macsio --part_mesh_dims 5000 5000 5000"
 miniqmc_a_app="bin/miniqmc -g 20 20 20 -n 1000"
 miniqmc_b_app="bin/miniqmc -g 30 30 30 -n 1000"
 miniqmc_c_app="bin/miniqmc -g 40 40 40 -n 1000"
-minivite_a_app="miniVite -n 100"
+minivite_a_app="miniVite -n 1000"
 nekbone_a_app="nekbone"
 sw4lite_a_app="optimize/sw4lite tests/cartesian/basic.in"
 swfft_a_app="build/TestDfft 1000 250 250 250"
@@ -50,17 +50,11 @@ elif [[ $2 -eq 64 ]]; then
   miniamr_a_app="ma.x --num_tsteps 100000 --npx 4 --npy 4 --npz 4"
 fi
 # Laghos
-cd Laghos
+cd ../Laghos
 mpirun -n $2 --hostfile $HOSTFILE ./$laghos_a_app > $DATASET/$NAME-laghos-A.out 2> $DATASET/$NAME-laghos-A.err
 mpirun -n $2 --hostfile $HOSTFILE ./$laghos_b_app > $DATASET/$NAME-laghos-B.out 2> $DATASET/$NAME-laghos-B.err
 mpirun -n $2 --hostfile $HOSTFILE ./$laghos_c_app > $DATASET/$NAME-laghos-C.out 2> $DATASET/$NAME-laghos-C.err
 cd ..
-# AMG
-cd AMG
-mpirun -n $2 --hostfile $HOSTFILE ./$amg_a_app > $DATASET/$NAME-amg-A.out 2> $DATASET/$NAME-amg-A.err
-mpirun -n $2 --hostfile $HOSTFILE ./$amg_b_app > $DATASET/$NAME-amg-B.out 2> $DATASET/$NAME-amg-B.err
-mpirun -n $2 --hostfile $HOSTFILE ./$amg_c_app > $DATASET/$NAME-amg-C.out 2> $DATASET/$NAME-amg-C.err
-cd cd ..
 # XSBench
 cd XSBench/openmp-threading
 mpirun -n $2 --hostfile $HOSTFILE ./$xsbench_a_app > $DATASET/$NAME-xsbench-A.out 2> $DATASET/$NAME-xsbench-A.err
@@ -71,6 +65,11 @@ cd ../..
 cd thornado_mini/DeleptonizationProblem/Executables
 mpirun -n $2 --hostfile $HOSTFILE ./$thornado_mini_a_app > $DATASET/$NAME-thornado-mini-A.out 2> $DATASET/$NAME-thornado-mini-A.err
 cd ../../..
+# PICSAR
+cd PICSAR
+mpirun -n $2 --hostfile $HOSTFILE ./$picsar_a_app > $DATASET/$NAME-picsar-A.out 2> $DATASET/$NAME-picsar-A.err
+mpirun -n $2 --hostfile $HOSTFILE ./$picsar_b_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-B.err
+cd ..
 # Ember/Halo3D
 cd ember/mpi/halo3d
 mpirun -n $2 --hostfile $HOSTFILE ./$ember_a_app > $DATASET/$NAME-ember-A.out 2> $DATASET/$NAME-ember-A.err
@@ -117,8 +116,9 @@ mpirun -n $2 --hostfile $HOSTFILE ./$swfft_a_app > $DATASET/$NAME-swfft-A.out 2>
 mpirun -n $2 --hostfile $HOSTFILE ./$swfft_b_app > $DATASET/$NAME-swfft-B.out 2> $DATASET/$NAME-swfft-B.err
 mpirun -n $2 --hostfile $HOSTFILE ./$swfft_c_app > $DATASET/$NAME-swfft-C.out 2> $DATASET/$NAME-swfft-C.err
 cd ..
-# PICSAR
-cd PICSAR
-mpirun -n $2 --hostfile $HOSTFILE ./$picsar_a_app > $DATASET/$NAME-picsar-A.out 2> $DATASET/$NAME-picsar-A.err
-mpirun -n $2 --hostfile $HOSTFILE ./$picsar_b_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-B.err
+# AMG
+cd AMG
+mpirun -n $2 --hostfile $HOSTFILE ./$amg_a_app > $DATASET/$NAME-amg-A.out 2> $DATASET/$NAME-amg-A.err
+mpirun -n $2 --hostfile $HOSTFILE ./$amg_b_app > $DATASET/$NAME-amg-B.out 2> $DATASET/$NAME-amg-B.err
+mpirun -n $2 --hostfile $HOSTFILE ./$amg_c_app > $DATASET/$NAME-amg-C.out 2> $DATASET/$NAME-amg-C.err
 cd ..

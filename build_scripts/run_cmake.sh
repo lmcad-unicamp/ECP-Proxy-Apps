@@ -11,3 +11,4 @@ sh autogen.sh
 ./configure
 make
 sudo make install
+#~/cmake-3.20.3/bin/cmake
