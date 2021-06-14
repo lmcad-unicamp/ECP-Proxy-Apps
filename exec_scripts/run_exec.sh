@@ -7,57 +7,33 @@ DATASET=$PWD/$1
 NAME=$(date +"%m-%d-%y-%T")
 mkdir $DATASET
 cd ..
-laghos_a_app="./laghos data/cube_12_hex.mesh --max-steps 100"
-laghos_b_app="./laghos data/cube_24_hex.mesh --max-steps 100"
-laghos_c_app="./laghos data/cube_311_hex.mesh --max-steps 100"
+laghos_a_app="./laghos -m data/cube_311_hex.mesh --max-steps 1000"
+laghos_b_app="./laghos -m data/cube_522_hex.mesh --max-steps 1000"
+laghos_c_app="./laghos -m data/cube_922_hex.mesh --max-steps 1000"
 if [[ $2 -eq 1 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 1 1 1"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 1 1 1"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 1 1 1"
+  amg_a_app="./test/amg -problem 2 -P 1 1 1"
 elif [[ $2 -eq 2 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 2 1 1"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 2 1 1"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 2 1 1"
+  amg_a_app="./test/amg -problem 2 -P 2 1 1"
 elif [[ $2 -eq 4 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 2 2 1"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 2 2 1"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 2 2 1"
+  amg_a_app="./test/amg -problem 2 -P 2 2 1"
 elif [[ $2 -eq 8 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 2 2 2"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 2 2 2"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 2 2 2"
+  amg_a_app="./test/amg -problem 2 -P 2 2 2"
 elif [[ $2 -eq 16 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 4 2 2"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 4 2 2"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 4 2 2"
+  amg_a_app="./test/amg -problem 2 -P 4 2 2"
 elif [[ $2 -eq 32 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 4 4 2"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 4 4 2"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 4 4 2"
+  amg_a_app="./test/amg -problem 2 -P 4 4 2"
 elif [[ $2 -eq 64 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 4 4 4"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 4 4 4"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 4 4 4"
+  amg_a_app="./test/amg -problem 2 -P 4 4 4"
 elif [[ $2 -eq 128 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 8 4 4"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 8 4 4"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 8 4 4"
+  amg_a_app="./test/amg -problem 2 -P 8 4 4"
 elif [[ $2 -eq 128 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 8 4 4"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 8 4 4"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 8 4 4"
+  amg_a_app="./test/amg -problem 2 -P 8 4 4"
 elif [[ $2 -eq 256 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 8 8 4"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 8 8 4"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 8 8 4"
+  amg_a_app="./test/amg -problem 2 -P 8 8 4"
 elif [[ $2 -eq 512 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 8 8 8"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 8 8 8"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 8 8 8"
+  amg_a_app="./test/amg -problem 2 -P 8 8 8"
 elif [[ $2 -eq 1024 ]]; then
-  amg_a_app="./test/amg -problem 2 -n 15 15 15 -P 16 8 8"
-  amg_b_app="./test/amg -problem 2 -n 25 25 25 -P 16 8 8"
-  amg_c_app="./test/amg -problem 2 -n 32 32 32 -P 16 8 8"
+  amg_a_app="./test/amg -problem 2 -P 16 8 8"
 fi
 xsbench_a_app="./XSBench -G nuclide -s small"
 xsbench_b_app="./XSBench -G nuclide -s large"
@@ -73,9 +49,9 @@ macsio_a_app="./macsio/macsio --part_mesh_dims 150 150 150"
 macsio_b_app="./macsio/macsio --part_mesh_dims 200 200 200"
 macsio_c_app="./macsio/macsio --part_mesh_dims 500 500 500"
 miniqmc_a_app="./bin/miniqmc -g 2 2 2 -n 100"
-miniqmc_b_app="./bin/miniqmc -g 10 10 10 -n 100"
-miniqmc_c_app="./bin/miniqmc -g 25 25 25 -n 100"
-minivite_a_app="./miniVite -n 5000"
+miniqmc_b_app="./bin/miniqmc -g 5 5 5 -n 100"
+miniqmc_c_app="./bin/miniqmc -g 10 10 10 -n 100"
+minivite_a_app="./miniVite -n 1600"
 nekbone_a_app="./nekbone"
 sw4lite_a_app="./optimize/sw4lite tests/cartesian/basic.in"
 swfft_a_app="./build/TestDfft 1000 50 50 50"
