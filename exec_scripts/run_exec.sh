@@ -75,8 +75,6 @@ fi
 # AMG
 cd AMG
 mpirun -n $2 --hostfile $HOSTFILE $amg_a_app > $DATASET/$NAME-amg-A.out 2> $DATASET/$NAME-amg-A.err
-mpirun -n $2 --hostfile $HOSTFILE $amg_b_app > $DATASET/$NAME-amg-B.out 2> $DATASET/$NAME-amg-B.err
-mpirun -n $2 --hostfile $HOSTFILE $amg_c_app > $DATASET/$NAME-amg-C.out 2> $DATASET/$NAME-amg-C.err
 cd ..
 # Laghos
 cd Laghos
