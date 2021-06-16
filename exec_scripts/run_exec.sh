@@ -57,8 +57,9 @@ sw4lite_a_app="./optimize/sw4lite tests/cartesian/basic.in"
 swfft_a_app="./build/TestDfft 1000 50 50 50"
 swfft_b_app="./build/TestDfft 1000 100 100 100"
 swfft_c_app="./build/TestDfft 1000 150 150 150"
-picsar_a_app="./fortran_bin/picsar examples/example_decks_fortran/laser-$2.pixr"
-picsar_b_app="./fortran_bin/picsar examples/example_decks_fortran/plane_wave_test_2d-$2.pixr"
+picsar_a_app="./fortran_bin/picsar examples/example_decks_fortran/plane_wave_test_2d-A-$2.pixr"
+picsar_b_app="./fortran_bin/picsar examples/example_decks_fortran/plane_wave_test_2d-B-$2.pixr"
+picsar_c_app="./fortran_bin/picsar examples/example_decks_fortran/plane_wave_test_2d-C-$2.pixr"
 if [[ $2 -eq 1 || $2 -eq 2 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx $2"
 elif [[ $2 -eq 4 ]]; then
@@ -96,6 +97,7 @@ cd ../../..
 cd PICSAR
 mpirun -n $2 --hostfile $HOSTFILE $picsar_a_app > $DATASET/$NAME-picsar-A.out 2> $DATASET/$NAME-picsar-A.err
 mpirun -n $2 --hostfile $HOSTFILE $picsar_b_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-B.err
+mpirun -n $2 --hostfile $HOSTFILE $picsar_c_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-C.err
 cd ..
 # Ember/Halo3D
 cd ember/mpi/halo3d
