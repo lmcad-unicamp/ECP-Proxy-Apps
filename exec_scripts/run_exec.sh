@@ -40,8 +40,8 @@ xsbench_b_app="./XSBench -G nuclide -s large"
 xsbench_c_app="./XSBench -G nuclide -s xl"
 thornado_mini_a_app="./DeleptonizationProblem1D_mymachine"
 ember_a_app="./halo3d -nx 1000 -ny 1000 -nz 1000 -iterations 1000"
-ember_b_app="./halo3d -nx 5000 -ny 5000 -nz 5000 -iterations 1000"
-ember_c_app="./halo3d -nx 10000 -ny 10000 -nz 10000 -iterations 1000"
+ember_b_app="./halo3d -nx 1500 -ny 1500 -nz 1500 -iterations 1500"
+ember_c_app="./halo3d -nx 2500 -ny 2500 -nz 2500 -iterations 2500"
 examinimd_a_app="./src/ExaMiniMD -il input/in-A.lj"
 examinimd_b_app="./src/ExaMiniMD -il input/in-B.lj"
 examinimd_c_app="./src/ExaMiniMD -il input/in-C.lj"
@@ -73,6 +73,12 @@ elif [[ $2 -eq 32 ]]; then
 elif [[ $2 -eq 64 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx 4 --npy 4 --npz 4"
 fi
+# PICSAR
+cd PICSAR
+mpirun -n $2 --hostfile $HOSTFILE $picsar_a_app > $DATASET/$NAME-picsar-A.out 2> $DATASET/$NAME-picsar-A.err
+mpirun -n $2 --hostfile $HOSTFILE $picsar_b_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-B.err
+mpirun -n $2 --hostfile $HOSTFILE $picsar_c_app > $DATASET/$NAME-picsar-C.out 2> $DATASET/$NAME-picsar-C.err
+cd ..
 # AMG
 cd AMG
 mpirun -n $2 --hostfile $HOSTFILE $amg_a_app > $DATASET/$NAME-amg-A.out 2> $DATASET/$NAME-amg-A.err
@@ -93,13 +99,6 @@ cd ../..
 cd thornado_mini/DeleptonizationProblem/Executables
 mpirun -n $2 --hostfile $HOSTFILE $thornado_mini_a_app > $DATASET/$NAME-thornado-mini-A.out 2> $DATASET/$NAME-thornado-mini-A.err
 cd ../../..
-# PICSAR
-cd PICSAR
-mpirun -n $2 --hostfile $HOSTFILE $picsar_a_app > $DATASET/$NAME-picsar-A.out 2> $DATASET/$NAME-picsar-A.err
-mpirun -n $2 --hostfile $HOSTFILE $picsar_b_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-B.err
-mpirun -n $2 --hostfile $HOSTFILE $picsar_c_app > $DATASET/$NAME-picsar-B.out 2> $DATASET/$NAME-picsar-C.err
-cd ..
-# Ember/Halo3D
 cd ember/mpi/halo3d
 mpirun -n $2 --hostfile $HOSTFILE $ember_a_app > $DATASET/$NAME-ember-A.out 2> $DATASET/$NAME-ember-A.err
 mpirun -n $2 --hostfile $HOSTFILE $ember_b_app > $DATASET/$NAME-ember-B.out 2> $DATASET/$NAME-ember-B.err
