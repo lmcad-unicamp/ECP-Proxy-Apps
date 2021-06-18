@@ -72,6 +72,14 @@ elif [[ $2 -eq 32 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx 4 --npy 4 --npz 2"
 elif [[ $2 -eq 64 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx 4 --npy 4 --npz 4"
+elif [[ $2 -eq 128 ]]; then
+  miniamr_a_app="./ma.x --num_tsteps 10000 --npx 8 --npy 4 --npz 4"
+elif [[ $2 -eq 256 ]]; then
+  miniamr_a_app="./ma.x --num_tsteps 10000 --npx 8 --npy 8 --npz 4"
+elif [[ $2 -eq 512 ]]; then
+  miniamr_a_app="./ma.x --num_tsteps 10000 --npx 8 --npy 8 --npz 8"
+elif [[ $2 -eq 1024 ]]; then
+  miniamr_a_app="./ma.x --num_tsteps 10000 --npx 16 --npy 8 --npz 8"
 fi
 # PICSAR
 cd PICSAR
