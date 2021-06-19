@@ -40,6 +40,8 @@ elif [[ $2 -eq 60 ]]; then
   amg_a_app="./test/amg -problem 2 -P 15 4 1"
 elif [[ $2 -eq 120 ]]; then
   amg_a_app="./test/amg -problem 2 -P 15 4 2"
+elif [[ $2 -eq 240 ]]; then
+  amg_a_app="./test/amg -problem 2 -P 15 4 4"
 fi
 xsbench_a_app="./XSBench -G nuclide -s small"
 xsbench_b_app="./XSBench -G nuclide -s large"
@@ -92,6 +94,8 @@ elif [[ $2 -eq 60 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx 15 --npy 4 --npz 1"
 elif [[ $2 -eq 120 ]]; then
   miniamr_a_app="./ma.x --num_tsteps 10000 --npx 15 --npy 4 --npz 2"
+elif [[ $2 -eq 240 ]]; then
+  miniamr_a_app="./ma.x --num_tsteps 10000 --npx 15 --npy 4 --npz 4"
 fi
 # PICSAR
 cd PICSAR
