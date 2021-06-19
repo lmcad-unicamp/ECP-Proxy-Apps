@@ -119,11 +119,11 @@ cd ..
 #cd thornado_mini/DeleptonizationProblem/Executables
 #mpirun -n $2 --hostfile $HOSTFILE $thornado_mini_a_app > $DATASET/$NAME-thornado-mini-A.out 2> $DATASET/$NAME-thornado-mini-A.err
 #cd ../../..
-cd ember/mpi/halo3d
-mpirun -n $2 --hostfile $HOSTFILE $ember_a_app > $DATASET/$NAME-ember-A.out 2> $DATASET/$NAME-ember-A.err
-mpirun -n $2 --hostfile $HOSTFILE $ember_b_app > $DATASET/$NAME-ember-B.out 2> $DATASET/$NAME-ember-B.err
-mpirun -n $2 --hostfile $HOSTFILE $ember_c_app > $DATASET/$NAME-ember-C.out 2> $DATASET/$NAME-ember-C.err
-cd ../../..
+#cd ember/mpi/halo3d
+#mpirun -n $2 --hostfile $HOSTFILE $ember_a_app > $DATASET/$NAME-ember-A.out 2> $DATASET/$NAME-ember-A.err
+#mpirun -n $2 --hostfile $HOSTFILE $ember_b_app > $DATASET/$NAME-ember-B.out 2> $DATASET/$NAME-ember-B.err
+#mpirun -n $2 --hostfile $HOSTFILE $ember_c_app > $DATASET/$NAME-ember-C.out 2> $DATASET/$NAME-ember-C.err
+#cd ../../..
 # ExaMiniMD
 #cd ExaMiniMD
 #mpirun -n $2 --hostfile $HOSTFILE $examinimd_a_app > $DATASET/$NAME-examinimd-A.out 2> $DATASET/$NAME-examinimd-A.err
