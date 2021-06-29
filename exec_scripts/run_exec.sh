@@ -26,8 +26,6 @@ elif [[ $2 -eq 64 ]]; then
   amg_a_app="./test/amg -problem 2 -P 4 4 4"
 elif [[ $2 -eq 128 ]]; then
   amg_a_app="./test/amg -problem 2 -P 8 4 4"
-elif [[ $2 -eq 128 ]]; then
-  amg_a_app="./test/amg -problem 2 -P 8 4 4"
 elif [[ $2 -eq 256 ]]; then
   amg_a_app="./test/amg -problem 2 -P 8 8 4"
 elif [[ $2 -eq 512 ]]; then
@@ -117,12 +115,6 @@ mpirun -n $2 --hostfile $HOSTFILE $laghos_a_app > $DATASET/$NAME-laghos-A.out 2>
 mpirun -n $2 --hostfile $HOSTFILE $laghos_b_app > $DATASET/$NAME-laghos-B.out 2> $DATASET/$NAME-laghos-B.err
 mpirun -n $2 --hostfile $HOSTFILE $laghos_c_app > $DATASET/$NAME-laghos-C.out 2> $DATASET/$NAME-laghos-C.err
 cd ..
-# XSBench
-cd XSBench/openmp-threading
-mpirun -n $2 --hostfile $HOSTFILE $xsbench_a_app > $DATASET/$NAME-xsbench-A.out 2> $DATASET/$NAME-xsbench-A.err
-mpirun -n $2 --hostfile $HOSTFILE $xsbench_b_app > $DATASET/$NAME-xsbench-B.out 2> $DATASET/$NAME-xsbench-B.err
-mpirun -n $2 --hostfile $HOSTFILE $xsbench_c_app > $DATASET/$NAME-xsbench-C.out 2> $DATASET/$NAME-xsbench-C.err
-cd ../..
 # THORNADO-MINI
 cd thornado_mini/DeleptonizationProblem/Executables
 mpirun -n $2 --hostfile $HOSTFILE $thornado_mini_a_app > $DATASET/$NAME-thornado-mini-A.out 2> $DATASET/$NAME-thornado-mini-A.err
@@ -173,3 +165,9 @@ mpirun -n $2 --hostfile $HOSTFILE $swfft_a_app > $DATASET/$NAME-swfft-A.out 2> $
 mpirun -n $2 --hostfile $HOSTFILE $swfft_b_app > $DATASET/$NAME-swfft-B.out 2> $DATASET/$NAME-swfft-B.err
 mpirun -n $2 --hostfile $HOSTFILE $swfft_c_app > $DATASET/$NAME-swfft-C.out 2> $DATASET/$NAME-swfft-C.err
 cd ..
+# XSBench
+cd XSBench/openmp-threading
+mpirun -n $2 --hostfile $HOSTFILE $xsbench_a_app > $DATASET/$NAME-xsbench-A.out 2> $DATASET/$NAME-xsbench-A.err
+mpirun -n $2 --hostfile $HOSTFILE $xsbench_b_app > $DATASET/$NAME-xsbench-B.out 2> $DATASET/$NAME-xsbench-B.err
+mpirun -n $2 --hostfile $HOSTFILE $xsbench_c_app > $DATASET/$NAME-xsbench-C.out 2> $DATASET/$NAME-xsbench-C.err
+cd ../..
