@@ -168,6 +168,6 @@ cd ..
 # XSBench
 cd XSBench/openmp-threading
 mpirun -n $2 --hostfile $HOSTFILE $xsbench_a_app > $DATASET/$NAME-xsbench-A.out 2> $DATASET/$NAME-xsbench-A.err
-mpirun -n $2 --hostfile $HOSTFILE $xsbench_b_app > $DATASET/$NAME-xsbench-B.out 2> $DATASET/$NAME-xsbench-B.err
-mpirun -n $2 --hostfile $HOSTFILE $xsbench_c_app > $DATASET/$NAME-xsbench-C.out 2> $DATASET/$NAME-xsbench-C.err
+#mpirun -n $2 --hostfile $HOSTFILE $xsbench_b_app > $DATASET/$NAME-xsbench-B.out 2> $DATASET/$NAME-xsbench-B.err
+#mpirun -n $2 --hostfile $HOSTFILE $xsbench_c_app > $DATASET/$NAME-xsbench-C.out 2> $DATASET/$NAME-xsbench-C.err
 cd ../..
